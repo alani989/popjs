@@ -1,12 +1,7 @@
-var express = require('express');
-var router = express.Router();
+const question = require('./question');
+const signup = require('./signup');
 
-router.get('/index', function(req, res) {
-    res.render('index');
-})
-
-router.post('/index', function(req, res) {
-    res.render('index');
-})
-
-module.exports = router;
+module.exports = function(app,db) {
+    question(app,db);
+    signup(app,db);
+}
