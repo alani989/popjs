@@ -22,17 +22,26 @@
         
         <div class="row">
             <div class="col-6 " style="padding-top: 10px">
-                
-                    <p style="font-size: 30pt; color: white;font-weight: 200">Ask your Git question:</p>
-                
-                            <form action="/dash9" method="POST">
-                                Enter question here:<input type="text" name="title" />
-                                
+                    <p style="font-size: 30pt; color: white;font-weight: 200">Back End Questions</p>
+                    <% if (questions.length > 0) { %>
+                        <% for (i=0; i< questions.length; i++) { %>
+                            <% if (questions[i].category == "backend") { %>
+                            <h1>Question: <%= questions[i].title %></h1>
+                            <form action="/answers" method="POST">
+                                Your Answer:<input type="text" name="content" />
+                                <input type="hidden" name="title" value= "<%= questions[i].title %>" />
+                                <input type="hidden" name="userid" value= "<%= questions[i].userid %>" />
                                 <input type="submit" />  
                             </form>
-                           
+                            <% } %>
+                           <% } %>
+                           <% } %>
+                            
+                        
             </div>
+            
         </div>
+        
     </div>
 
 
