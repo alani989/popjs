@@ -1,16 +1,22 @@
-module.exports = function(app,db) {
-    app.post('/signup', (req,res) => {
+module.exports = function(app,db, bcrypt) {
+
+    app.post('/signup', (req, res) => {
         var username = req.body.userName;
-        var password = req.body.password;
         var email = req.body.email;
-        db.user.create({
-            username: username,
-            password: password,
-            email: email
+        bcrypt.hash(req.body.password, 5, function(err, encryptedData) {
+            if (err) {
+                console.error(err)
+            } else {
+                db.user.create({
+                    username: username,
+                    password: encryptedData,
+                    email: email
+                })
+            }
         })
     
         db.user.sync().then(function() {
-            res.render('login')
+            res.render('signup')
         })
     })
 

@@ -1,6 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const db = require('./db/connection');
+const promise = require('bluebird')
+var bcrypt = require('bcrypt');
 
 const port = 3000;
 const app = express();
@@ -13,7 +15,7 @@ app.set('views', 'app/views');
 
 app.use(express.static('./app/public'))
 
-require('./app/routes')(app, db);
+require('./app/routes')(app, db, bcrypt,promise);
 
 app.get('/', function (req, res) {
     res.render('signup');
