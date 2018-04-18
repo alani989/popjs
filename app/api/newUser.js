@@ -4,15 +4,12 @@ var bodyParser = require('body-parser');
 var Sequelize = require('sequelize');
 var connection = new Sequelize('postgres://localhost:5432/pop');
 
-var user = connection.import('../models/users');
-const models = {
-    user: connection.import('../models/users')
-}
+const user = connection.import('../models/users')
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.post('/api/newUser', function(req, res) {
+app.post('/index', function (req, res) {
     var username = req.body.userName;
     var password = req.body.password;
     var email = req.body.email;
@@ -22,8 +19,9 @@ app.post('/api/newUser', function(req, res) {
         email: email
     })
 
-    user.sync()
-
+    user.sync().then(function() {
+        res.redirect('index')
+    })
 })
 
 module.exports = app;

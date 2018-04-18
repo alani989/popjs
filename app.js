@@ -10,10 +10,14 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', 'app/views');
 
-app.use(require('./app/routes/signup'));
 app.use(require('./app/api/newUser'));
-app.use(require('./app/api/newQuestion'));
-app.use(require('./app/api/newAnswer'));
+app.use(require('./app/api/questions'));
+app.use(require('./app/api/answers'));
+app.use(require('./app/routes/signup'));
+app.use(require('./app/routes/index'));
+app.use(require('./app/routes/question'));
+
+
 
 app.use(express.static('./app/public'))
 
