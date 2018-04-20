@@ -18,16 +18,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="/js/signup.js"></script>
     <script src="../js/signup.js"></script>
+	
 
 </head>
 
 <body>
-    <nav class="main-nav">
-	<ul>
-		<li><a class="signin" href="#0">Sign in</a></li>
-		<li><a class="signup" href="#0">Sign up</a></li>
-	</ul>
-</nav>
+
 
 <div class="user-modal">
 		<div class="user-modal-container">
@@ -48,12 +44,7 @@
 						<label class="image-replace password" for="signin-password">Password</label>
 						<input name="password" class="full-width has-padding has-border" id="signin-password" type="password"  placeholder="Password">
 						<a href="#0" class="hide-password">Show</a>
-						<span class="error-message">Wrong password! Try again.</span>
-					</p>
-
-					<p class="fieldset">
-						<input type="checkbox" id="remember-me" checked>
-						<label for="remember-me">Remember me</label>
+						<span id="passwordError" class="error-message">Wrong password! Try again.</span>
 					</p>
 
 					<p class="fieldset">
@@ -61,7 +52,6 @@
 					</p>
 				</form>
 				
-				<p class="form-bottom-message"><a href="#0">Forgot your password?</a></p>
 				<!-- <a href="#0" class="close-form">Close</a> -->
 			</div>
 
@@ -70,7 +60,8 @@
 					<p class="fieldset">
 						<label class="image-replace username" for="signup-username">Username</label>
 						<input name="userName" class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Username">
-						<span class="error-message">Your username can only contain numeric and alphabetic symbols!</span>
+
+						<span id="userNameError" class="error-message">Username is taken</span>
 					</p>
 
 					<p class="fieldset">
@@ -84,11 +75,6 @@
 						<input name="password" class="full-width has-padding has-border" id="signup-password" type="password"  placeholder="Password">
 						<a href="#0" class="hide-password">Show</a>
 						<span class="error-message">Your password has to be at least 6 characters long!</span>
-					</p>
-
-					<p class="fieldset">
-						<input type="checkbox" id="accept-terms">
-						<label for="accept-terms">I agree to the <a class="accept-terms" href="#0">Terms</a></label>
 					</p>
 
 					<p class="fieldset">
@@ -119,7 +105,8 @@
 			<a href="#0" class="close-form">Close</a>
 		</div>
 	</div>
-
+ 
 </body>
+
 
 </html>

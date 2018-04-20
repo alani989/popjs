@@ -6,8 +6,6 @@ module.exports = (db, Sequelize) => {
         questionid: Sequelize.INTEGER,
         userid: Sequelize.INTEGER,
         posted_date: Sequelize.DATE,
-        thumbs_up: Sequelize.INTEGER,
-        thumbs_down: Sequelize.INTEGER
     }, {
             timestamps: false,
             freezeTableName: true

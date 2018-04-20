@@ -1,8 +1,103 @@
+<head>
+    <% include partials/head.ejs %>
+</head>
+
 <body>
+    <% include partials/jumbotron.ejs %>
+        <div class="container">
 
-    <h2>
-        <%= username %>
-    </h2>
+            <div class="row">
+                <!-- profile -->
+                <div class="col-lg-6 bg-light text-center raisedbox" style="height:400px;">
+                    <img class="img-fluid" src="/images/useravatar.png" alt="userPic">
+                    <h2 class="lead">Welcome to your Dashboard</h2>
+                </div>
+                <!-- question and answer section -->
+                <div class="col-lg-6">
+                    <!-- question form -->
+                    <form action="/question/<%= userid %>" method="POST">
+                        <div class="form-group">
+                            <label for="title">Title</label>
+                            <input type="text" class="form-control" name="title" placeholder="Enter title">
+                        </div>
+                        <div class="form-group">
+                            <select name="category">
+                                <option value="front-end">Front-End</option>
+                                <option value="back-end">Back-End</option>
+                                <option value="database">Database</option>
+                                <option value="git">Git</option>
+                                <option value="others">Job/Career</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Content</label>
+                            <input type="text" class="form-control" name="content" placeholder="Enter content">
+                        </div>
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </form>
+                    <!-- answer form -->
+                    <div class="answer_questions">
+                        <div id="helpBanner" class="d-flex justify-content-center">
+                            <h3>Help other geeks!</h3>
+                        </div>
+                        <div id="linksDiv">
+                            <a href="/answers/front-end?xyz=<%=userid%>">Front-End</a>
+                            |
+                            <a href="/answers/back-end?xyz=<%=userid%>">Back-End</a>
+                            |
+                            <a href="/answers/database?xyz=<%=userid%>">Database</a>
+                            |
+                            <a href="/answers/git?xyz=<%=userid%>">Git</a>
+                            |
+                            <a href="/answers/others?xyz=<%=userid%>">Others</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <!-- user questions' cards -->
+        <div class="row">
+            <div class="col-lg-6">
+                <h3 class="bg-light text-center raisedbox">My Questions</h3>
 
+                <% if (title.length > 0) { %>
+                    <% for (i=0; i< title.length; i++) { %>
+                        <div class="card raisedbox">
+
+                            <div class="card-header">
+                                <h3>
+                                    <%= title[i] %>
+                                </h3>
+                            </div>
+                            <div class="card-body">
+                                <blockquote class="blockquote mb-0">
+                                    <p>
+                                        <%= content[i] %>
+                                    </p>
+                                    <footer class="blockquote-footer">
+                                        <cite title="Source Title">
+                                            Category:
+                                            <%= category[i] %>
+                                        </cite>
+                                    </footer>
+                                </blockquote>
+                            </div>
+                        </div>
+                        <br>
+                        <% } %>
+                            <% } %>
+
+            </div>
+
+        </div>
+
+
+        </div>
+        <!-- importing bootstrap scripts -->
+        <% include partials/bootstrap.ejs %>
 
 </body>
+
+</html>

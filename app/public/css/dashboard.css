@@ -1,0 +1,42 @@
+body {
+    background-color: rgb(138,59,61) !important;
+    list-style-type: none;
+    font-family: 'Vollkorn', serif !important;
+}
+
+img {
+    width: 325px;
+}
+
+.card {
+    margin-bottom: 10px;
+}
+.raisedbox { 
+    padding: 10px;
+    border: 1px solid #888888;
+    box-shadow:  -1px 1px #888888,
+         -2px 2px #888888,
+         -3px 3px #888888,
+         -4px 4px #888888,
+         -5px 5px #888888;
+}
+.answer_questions a {
+    color: black;
+}
+a:hover {
+    color: rgb(138,59,61) !important;
+}
+.answer_questions {
+    background-color: white !important;
+}
+#helpBanner {
+    border-bottom: 1px black solid;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#linksDiv {
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    text-align: center;
+}
