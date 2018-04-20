@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Pop</title>
+    <title>POP.JS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
    <link rel="stylesheet" type="text/css" href="/css/signup.css">
@@ -36,14 +36,13 @@
 				<form class="form" method="POST" action="/login">
 					<p class="fieldset">
 						<label class="image-replace email" for="signin-email">Username</label>
-						<input name="userName" class="full-width has-padding has-border" id="signin-email" type="text" placeholder="Username">
+						<input name="userName" class="full-width has-padding has-border" id="signin-email" type="text" placeholder="Username" required>
 						<span class="error-message">An account with this email address does not exist!</span>
 					</p>
 
 					<p class="fieldset">
 						<label class="image-replace password" for="signin-password">Password</label>
-						<input name="password" class="full-width has-padding has-border" id="signin-password" type="password"  placeholder="Password">
-						<a href="#0" class="hide-password">Show</a>
+						<input name="password" class="full-width has-padding has-border" id="signin-password" type="password"  placeholder="Password" required>
 						<span id="passwordError" class="error-message">Wrong password! Try again.</span>
 					</p>
 
@@ -59,21 +58,20 @@
 				<form class="form" method="POST" action="/signup">
 					<p class="fieldset">
 						<label class="image-replace username" for="signup-username">Username</label>
-						<input name="userName" class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Username">
+						<input name="userName" class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Username" required>
 
 						<span id="userNameError" class="error-message">Username is taken</span>
 					</p>
 
 					<p class="fieldset">
 						<label class="image-replace email" for="signup-email">E-mail</label>
-						<input name="email" class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail">
+						<input name="email" class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail" required>
 						<span class="error-message">Enter a valid email address!</span>
 					</p>
 
 					<p class="fieldset">
 						<label class="image-replace password" for="signup-password">Password</label>
-						<input name="password" class="full-width has-padding has-border" id="signup-password" type="password"  placeholder="Password">
-						<a href="#0" class="hide-password">Show</a>
+						<input name="password" class="full-width has-padding has-border" id="signup-password" type="password"  placeholder="Password" required>
 						<span class="error-message">Your password has to be at least 6 characters long!</span>
 					</p>
 

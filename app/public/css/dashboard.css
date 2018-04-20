@@ -1,11 +1,11 @@
 body {
     background-color: rgb(138,59,61) !important;
     list-style-type: none;
-    font-family: 'Vollkorn', serif !important;
+    font-family: 'Raleway', sans-serif; 
 }
 
 img {
-    width: 325px;
+    width: 300px;
 }
 
 .card {
@@ -20,23 +20,7 @@ img {
          -4px 4px #888888,
          -5px 5px #888888;
 }
-.answer_questions a {
-    color: black;
-}
+
 a:hover {
     color: rgb(138,59,61) !important;
-}
-.answer_questions {
-    background-color: white !important;
-}
-#helpBanner {
-    border-bottom: 1px black solid;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-#linksDiv {
-    padding-top: 10px;
-    padding-bottom: 10px;
-
-    text-align: center;
 }
