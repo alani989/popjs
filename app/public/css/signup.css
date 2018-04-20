@@ -1,77 +1,3 @@
-*,
-*:after,
-*:before {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-ul,
-li {
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    background: #d83d3d;
-}
-
-.main-nav {
-    width: 90%;
-    max-width: 240px;
-    margin: 0 auto;
-    height: 100%;
-    cursor: pointer;
-}
-
-.main-nav ul {
-    position: absolute;
-    width: 100%;
-    top: 40%;
-    margin: 0;
-    padding: 0;
-}
-
-.main-nav li {
-    list-style: none;
-    float: left;
-}
-
-.main-nav a {
-    display: block;
-    height: 50px;
-    margin: 10px;
-    padding: 2px 25px;
-    text-decoration: none;
-    border-radius: 30px;
-    line-height: 45px;
-    color: #FFF;
-    -webkit-transition: all 0.30s ease-in-out;
-    -moz-transition: all 0.30s ease-in-out;
-    -ms-transition: all 0.30s ease-in-out;
-    -o-transition: all 0.30s ease-in-out;
-}
-
-.main-nav li:nth-child(1) a {
-    background: #d83d3d;
-    border: 2px solid #fff;
-}
-
-.main-nav li:nth-child(1) a:hover {
-    background: #fff;
-    color: #d83d3d;
-}
-
-.main-nav li:nth-child(2) a {
-    background: #9e2c2c;
-    border: 2px solid #9e2c2c;
-}
-
-.main-nav li:nth-child(2) a:hover {
-    background: #b13131;
-    border: 2px solid #b13131;
-}
-
 .user-modal {
     position: fixed;
     top: 0;
@@ -81,28 +7,6 @@ body {
     background: rgba(127, 37, 37, 0.9);
     z-index: 3;
     overflow-y: auto;
-    cursor: pointer;
-    visibility: hidden;
-    opacity: 0;
-    -webkit-transition: opacity 0.3s 0, visibility 0 0.3s;
-    -moz-transition: opacity 0.3s 0, visibility 0 0.3s;
-    transition: opacity 0.3s 0, visibility 0 0.3s;
-}
-
-.user-modal.is-visible {
-    visibility: visible;
-    opacity: 1;
-    -webkit-transition: opacity 0.3s 0, visibility 0 0;
-    -moz-transition: opacity 0.3s 0, visibility 0 0;
-    transition: opacity 0.3s 0, visibility 0 0;
-}
-
-.user-modal.is-visible .user-modal-container {
-    -webkit-transform: translateY(0);
-    -moz-transform: translateY(0);
-    -ms-transform: translateY(0);
-    -o-transform: translateY(0);
-    transform: translateY(0);
 }
 
 .user-modal-container {
@@ -113,17 +17,6 @@ body {
     margin: 3em auto 4em;
     cursor: auto;
     border-radius: 0.25em;
-    -webkit-transform: translateY(-30px);
-    -moz-transform: translateY(-30px);
-    -ms-transform: translateY(-30px);
-    -o-transform: translateY(-30px);
-    transform: translateY(-30px);
-    -webkit-transition-property: -webkit-transform;
-    -moz-transition-property: -moz-transform;
-    transition-property: transform;
-    -webkit-transition-duration: 0.3s;
-    -moz-transition-duration: 0.3s;
-    transition-duration: 0.3s;
 }
 
 .user-modal-container .switcher:after {
@@ -137,6 +30,7 @@ body {
     float: left;
     text-align: center;
     list-style: none;
+    cursor: pointer
 }
 
 .user-modal-container .switcher li:first-child a {

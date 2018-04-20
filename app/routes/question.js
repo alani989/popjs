@@ -1,34 +1,29 @@
 module.exports = function (app, db) {
 
-    app.get('/question', function (req, res) {
-        titles = [];
-        contents = [];
-        categories = []
-        ids = [];
-        dates = []
+    app.post('/question/:id', (req, res) => {
+        var title = req.body.title;
+        var content = req.body.content;
+        var category = req.body.category;
+        var userid = req.params.id;
+        
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1;
+        var yyyy = today.getFullYear();
+        today = mm + '/' + dd + '/' + yyyy;
 
-        db.question.findAll({
-            where: {
-                userid: 1
-            }
-        }).then(function (data) {
-            for (var i = 0; i < data.length; i++) {
-                titles.push(data[i].title)
-                contents.push(data[i].content)
-                categories.push(data[i].category)
-                ids.push(data[i].userid)
-                dates.push(data[i].posted_date)
-            }
+        db.question.create({
+            title: title,
+            content: content,
+            category: category,
+            userid: userid,
+            posted_date: today,
         })
 
         db.question.sync().then(function () {
-            res.render('question', {
-                title: titles,
-                content: contents,
-                category: categories,
-                userid: ids,
-                date_posted: dates
-            })
+            res.redirect('/loadProfile/'+userid)
         })
     })
+
+
 }
